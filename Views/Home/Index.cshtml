@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Modul2Finish.Models.Author>
+
+<table>
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Book</td>
+    </tr>
+    @foreach (var author in Model)
+    {
+        <tr>
+            <td>@author.Id</td>
+            <td>@author.Name</td>
+            <td>
+                @foreach (var book in author.Books)
+                {
+                    <p>BookId: @book.Id</p>
+                    <p>Title: @book.Title</p>
+                }
+            </td>
+        </tr>
+    }
+</table>
